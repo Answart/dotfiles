@@ -1,2 +1,3 @@
 # dotfiles
-My dotfiles, config files, and scripts. :computer:
+
+My dotfiles, config files, and scripts.

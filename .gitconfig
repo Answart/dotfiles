@@ -1,0 +1,66 @@
+[user]
+	name = Alexandra Swart
+	email = 4269260+Answart@users.noreply.github.com
+	signingkey = 8744A2940BE1237D
+[github]
+	user = answart
+[gpg]
+	program = gpg
+[core]
+	editor = atom --wait
+	excludesfile = ~/.gitignore
+	precomposeunicode = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[column]
+	ui = auto dense
+[credential]
+	helper = osxkeychain
+[color]
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local   = yellow
+	remote  = green
+[color "status"]
+	added     = yellow bold
+	deleted   = red
+	removed   = red
+	changed   = yellow
+	untracked = green
+[color "diff"]
+	meta       = yellow bold
+	frag       = magenta bold
+	old        = red bold
+	new        = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal    = red bold
+	oldHighlight = red bold 52
+	newNormal    = green bold
+	newHighlight = green bold 22
+[alias]
+  aa      = add .
+  ap      = add -p
+	st      = status
+	cm      = commit -m
+	co      = checkout
+	db      = branch -D
+	rs1     = reset --soft HEAD~1
+	rs2     = reset --soft HEAD~2
+	pulease = push --force-with-lease
+	purb    = pull --rebase=preserve
+	l       = log
+	lg      = log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%C(reset) %s %C(dim white)<%an>%C(reset)%C(yellow)%d%C(reset)' --abbrev-commit --date=relative --graph
+	lg2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset %C(ul)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lo1 = log --graph --oneline --decorate
+  lon = log --show-notes=* --graph --decorate
+  lan = log --graph --decorate
+	today   = log --since=midnight --author=\"$(git config user.name)\" --oneline
+	o       = open
+[commit]
+	gpgsign = true
+[pull]
+	rebase = preserve
+[log]
+  abbrevCommit = true

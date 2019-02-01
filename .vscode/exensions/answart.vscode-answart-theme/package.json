@@ -1,0 +1,25 @@
+{
+  "name": "vscode-answart-theme",
+  "displayName": "Vscode-Answart-Theme",
+  "description": "My color scheme for Visual Studio Code.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "publisher": "answart",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/answart/vscode-answart-theme.git"
+  },
+  "engines": {
+    "vscode": "^1.10.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [{
+      "label": "Answart Theme",
+      "uiTheme": "vs-dark",
+      "path": "./themes/answart-theme.tmTheme"
+    }]
+  }
+}

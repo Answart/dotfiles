@@ -4,18 +4,10 @@
 ### COLORS
 
 eval my_gray='$FG[237]'
-# %{$my_gray%}
-eval my_orange='$FG[214]'
-eval my_orange1='$FG[208]'
-eval my_orange2='$FG[214]'
-eval my_periwinkle='$FG[075]'
-eval my_dark_teal='$FG[078]'
-eval my_dark_blue='$FG[032]'
-eval my_purple='$FG[105]'
-
-eval my_green='$FG[106]'
-eval my_yellow='$FG[226]'
 eval my_red='$FG[166]'
+eval my_orange='$FG[214]'
+eval my_yellow='$FG[226]'
+eval my_green='$FG[106]'
 
 
 ### _TIME
@@ -31,107 +23,150 @@ _TIME="[%t ]"
 # ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}"
 
 
-### Git [±master ╚✓▾▴●*➜-✚✖º*≡¤░═⚡○▶Ξ↑λ+✚»]
+### Git [±master ╚✓▾▴●*➜-✚✖º*≡¤░═⚡○▶Ξ↑λ+✚»⑃]
+# ☀ ✹ ☄ ♆ ♀ ♁ ♐ ♇ ♈ ♉ ♚ ♛ ♜ ♝ ♞ ♟ ♠ ♣ ⚢ ⚲ ⚳ ⚴ ⚥ ⚤ ⚦ ⚒ ⚑ ⚐ ♺ ♻ ♼ ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
+# ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ ⨠
+# ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
+
+_white_branch="%{$fg_bold[white]%}λ %{$reset_color%}"
+_green_branch="%{$my_green%}λ %{$reset_color%}"
+_orange_branch="%{$fg[yellow]%}λ %{$reset_color%}"
+_yellow_branch="%{$fg_bold[yellow]%}λ %{$reset_color%}"
+_red_branch="%{$my_red%}λ %{$reset_color%}"
+
+_green_plus="%{$my_green%}✚ %{$reset_color%}"
+_orange_plus="%{$fg[yellow]%}✚ %{$reset_color%}"
+_yellow_plus="%{$fg_bold[yellow]%}✚ %{$reset_color%}"
+
+_orange_dot="%{$fg[yellow]%}● %{$reset_color%}"
+_yellow_dot="%{$fg_bold[yellow]%}● %{$reset_color%}"
+
+_green_ex="%{$my_green%}✖ %{$reset_color%}"
+_orange_ex="%{$fg[yellow]%}✖ %{$reset_color%}"
+_yellow_ex="%{$fg_bold[yellow]%}✖ %{$reset_color%}"
+
+_orange_arrow="%{$fg[yellow]%}➜%{$reset_color%}"
+_yellow_arrow="%{$fg_bold[yellow]%}➜%{$reset_color%}"
+
+_blue_star="%{$reset_color%}*"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[green]%}λ %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$my_red%}λ %{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$my_yellow%}λ %{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_AHEAD="$_green_branch"
+# ZSH_THEME_GIT_PROMPT_BEHIND="$_red_branch"
+# ZSH_THEME_GIT_PROMPT_UNMERGED="$_orange_branch"
 
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$my_yellow%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$my_yellow%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$my_orange%}●%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_UNTRACKED="$_green_plus"
+# ZSH_THEME_GIT_PROMPT_MODIFIED="$_orange_dot"
+# ZSH_THEME_GIT_PROMPT_UNSTAGED="$_orange_dot"
+# ZSH_THEME_GIT_PROMPT_STAGED="$_yellow_dot"
 
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$my_green%}✓%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_ADDED="%{$my_green%}+%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$my_red%}-%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$my_green%}➜%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_CLEAN=""
+# ZSH_THEME_GIT_PROMPT_ADDED="$_green_plus"
+# ZSH_THEME_GIT_PROMPT_DELETED="$_orange_ex"
+# ZSH_THEME_GIT_PROMPT_RENAMED="$_orange_arrow"
 
-ZSH_THEME_GIT_PROMPT_STASHED="*%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_STASHED="$_blue_star"
 
-my_git_branch () {
+
+my_git_branch() {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
   echo "%{$fg_bold[white]%}${ref#refs/heads/}%{$reset_color%}"
 }
 
 my_git_branch_status() {
-  _STATUS="%{$fg_bold[white]%}λ %{$reset_color%}"
+  _STATUS="$_white_branch"
   _INDEX=$(command git status --porcelain -b 2> /dev/null)
 
-  # green λ
-  if $(echo "$_INDEX" | command grep -q '^## .*ahead'); then
-    _STATUS="$ZSH_THEME_GIT_PROMPT_AHEAD"
-  fi
-  if $(echo "$_INDEX" | command grep -q '^## .*behind'); then
-    _STATUS="$ZSH_THEME_GIT_PROMPT_BEHIND"
-  fi
-  if $(echo "$_INDEX" | command grep -q '^## .*diverged'); then
-    _STATUS="$ZSH_THEME_GIT_PROMPT_DIVERGED"
-  fi
-  if $(echo "$INDEX" | grep '^UU ' &> /dev/null); then
-    _STATUS="$ZSH_THEME_GIT_PROMPT_UNMERGED"
+  # BRANCH λ
+  if $(echo "$_INDEX" | command grep -q '^\#\# .*ahead'); then
+    _STATUS="$_green_branch"
+  elif $(echo "$_INDEX" | command grep -q '^\#\# .*behind'); then
+    _STATUS="$_red_branch"
+  elif $(echo "$_INDEX" | command grep -q '^\#\# .*diverged'); then
+    _STATUS="$_red_branch"
+  elif $(echo "$INDEX" | grep '^UU ' &> /dev/null); then
+    _STATUS="$_orange_branch"
   elif $(echo "$_INDEX" | command grep -q '^UU '); then
-    _STATUS="$ZSH_THEME_GIT_PROMPT_UNMERGED"
+    _STATUS="$_orange_branch"
   fi
 
   echo $_STATUS
 }
+
 
 my_git_commit_status() {
   _STATUS=""
   _INDEX=$(command git status --porcelain 2> /dev/null)
 
   if [[ -n "$_INDEX" ]]; then
-    # added green ✚
-    if $(echo "$INDEX" | grep '^A  ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_ADDED"
-    elif $(echo "$INDEX" | grep '^M  ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_ADDED"
-    fi
 
-    # deleted red -
-    if $(echo "$INDEX" | grep '^ D ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_DELETED"
-    elif $(echo "$INDEX" | grep '^AD ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_DELETED"
-    fi
-
-
-    # untracked green ●
-    if $(echo "$INDEX" | grep '^?? ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
+    ## NEW FILES ✚
+    if $(echo "$INDEX" | grep '^?? '); then
+      _STATUS="$_STATUS$_green_plus"
     elif $(echo "$_INDEX" | command grep -q -E '^\?\? '); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
+      _STATUS="$_STATUS$_green_plus"
+    fi
+    if $(echo "$INDEX" | grep '^AM '); then
+      _STATUS="$_STATUS$_orange_plus"
+    elif $(echo "$_INDEX" | command grep -q -E '^\A\M '); then
+      _STATUS="$_STATUS$_orange_plus"
+    fi
+    if $(echo "$INDEX" | grep '^A  '); then
+      _STATUS="$_STATUS$_yellow_plus"
+    elif $(echo "$_INDEX" | command grep -q -E '^\A  '); then
+      _STATUS="$_STATUS$_yellow_plus"
     fi
 
-    # modified/unstaged yellow ●
+    ## MODIFIED FILES ●
     if $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_MODIFIED"
-    elif $(echo "$INDEX" | grep '^AM ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_MODIFIED"
+      _STATUS="$_STATUS$_orange_dot"
+    elif $(echo "$_INDEX" | command grep -q -E '^\ M '); then
+      _STATUS="$_STATUS$_orange_dot"
     elif $(echo "$INDEX" | grep '^ T ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_MODIFIED"
-    elif $(echo "$_INDEX" | command grep -q '^.[MTD] '); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNSTAGED"
+      _STATUS="$_STATUS$orange_dot"
+    elif $(echo "$_INDEX" | command grep -q -E '^\ T '); then
+      _STATUS="$_STATUS$_orange_dot"
+    elif $(echo "$_INDEX" | command grep -q '^.\[\M\T\D\] '); then
+      _STATUS="$_STATUS$_orange_dot"
+    fi
+    if $(echo "$_INDEX" | command grep -q '^\[\A\M\R\D\]\. '); then
+      _STATUS="$_STATUS$_yellow_dot"
     fi
 
-    # staged orange ●
-    if $(echo "$_INDEX" | command grep -q '^[AMRD]. '); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
+    ## DELETED FILES ✖
+    if $(echo "$INDEX" | grep '^ D ' &> /dev/null); then
+      _STATUS="$_STATUS$_green_ex"
+    elif $(echo "$_INDEX" | command grep -q -E '^ \D '); then
+      _STATUS="$_STATUS$_green_ex"
+    fi
+    if $(echo "$INDEX" | grep '^AD ' &> /dev/null); then
+      _STATUS="$_STATUS$_yellow_ex"
+    elif $(echo "$_INDEX" | command grep -q -E '^\AD '); then
+      _STATUS="$_STATUS$_yellow_ex"
+    elif $(echo "$INDEX" | grep '^D  ' &> /dev/null); then
+      _STATUS="$_STATUS$_yellow_ex"
+    elif $(echo "$_INDEX" | command grep -q -E '^\D  '); then
+      _STATUS="$_STATUS$_yellow_ex"
     fi
 
-    # renamed green ➜
+    ## RENAMED FILES ➜
     if $(echo "$INDEX" | grep '^R  ' &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_RENAMED"
+      _STATUS="$_STATUS$_orange_arrow"
+    elif $(echo "$_INDEX" | command grep -q '^\R  '); then
+      _STATUS="$_STATUS$_orange_arrow"
+    fi
+    if $(echo "$INDEX" | grep '^R  ' &> /dev/null); then
+      _STATUS="$_STATUS$_yellow_arrow"
+    elif $(echo "$_INDEX" | command grep -q '^\R  '); then
+      _STATUS="$_STATUS$_yellow_arrow"
     fi
 
-    # stashed blue *
+    # STASHED *
     if $(command git rev-parse --verify refs/stash &> /dev/null); then
-      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STASHED"
+      _STATUS="$_STATUS$_blue_star"
     fi
   fi
 
@@ -168,10 +203,9 @@ else
   _LIBERTY="%{$fg[green]%}$%{$reset_color%}"
 fi
 
-# /Users/answart/.vscode/extensions
-# /Users/answart/.vscode/extensions/vscode-answart-theme/themes
+
 # SPACES
-get_space () {
+calc_space() {
   local STR=$1$2
   local zero='%([BSUbfksu]|([FB]|){*})'
   local LENGTH=${#${(S%%)STR//$~zero/}}
@@ -189,21 +223,22 @@ get_space () {
 
 ### END SETUP
 
-# first line
-_1LEFT="$_USERNAME $_DIREC"
-_1RIGHT="$_TIME "
+_ROW_1_LEFT="$_USERNAME $_DIREC"
+_ROW_1_RIGHT="$_TIME "
+_ROW_2_LEFT='> $_LIBERTY '
+_ROW_2_RIGHT='$(my_git_prompt)'
 
-# second line
-my_second_line () {
-  _SPACES=`get_space $_1LEFT $_1RIGHT`
+first_line() {
+  _SPACES=`calc_space $_ROW_1_LEFT $_ROW_1_RIGHT`
   print
-  print -rP "$_1LEFT$_SPACES$_1RIGHT"
+  print -rP "$_ROW_1_LEFT$_SPACES$_ROW_1_RIGHT"
 }
 
+# second line
 setopt prompt_subst
-PROMPT='> $_LIBERTY '
-RPROMPT='$(my_git_prompt)'
+PROMPT=$_ROW_2_LEFT
+RPROMPT=$_ROW_2_RIGHT
 
 autoload -U add-zsh-hook
-# second line
-add-zsh-hook precmd my_second_line
+# first line
+add-zsh-hook precmd first_line

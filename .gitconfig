@@ -1,10 +1,13 @@
 [user]
 	name = Alexandra Swart
 	email = answart@sbcglobal.net
-[github]
-	user = answart
+	signingkey = SIGNINGKEYHERE
 [gpg]
 	program = gpg
+[commit]
+	gpgsign = true
+[github]
+	user = answart
 [core]
 	editor = atom --wait
 	excludesfile = ~/.gitignore
@@ -57,8 +60,6 @@
   lan = log --graph --decorate
 	today   = log --since=midnight --author=\"$(git config user.name)\" --oneline
 	o       = open
-[commit]
-	gpgsign = true
 [pull]
 	rebase = preserve
 [log]

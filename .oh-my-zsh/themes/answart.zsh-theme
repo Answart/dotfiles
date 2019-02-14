@@ -38,8 +38,9 @@ _green_plus="%{$my_green%}✚ %{$reset_color%}"
 _orange_plus="%{$fg[yellow]%}✚ %{$reset_color%}"
 _yellow_plus="%{$fg_bold[yellow]%}✚ %{$reset_color%}"
 
-_orange_dot="%{$fg[yellow]%}● %{$reset_color%}"
-_yellow_dot="%{$fg_bold[yellow]%}● %{$reset_color%}"
+_green_dot="%{$my_green%}●%{$reset_color%}"
+_orange_dot="%{$fg[yellow]%}●%{$reset_color%}"
+_yellow_dot="%{$fg_bold[yellow]%}●%{$reset_color%}"
 
 _green_ex="%{$my_green%}✖ %{$reset_color%}"
 _orange_ex="%{$fg[yellow]%}✖ %{$reset_color%}"
@@ -103,25 +104,22 @@ my_git_commit_status() {
 
   if [[ -n "$_INDEX" ]]; then
 
-    ## NEW FILES ✚
+    # GREEN ●
+    ## new files
     if $(echo "$INDEX" | grep '^?? '); then
-      _STATUS="$_STATUS$_green_plus"
+      _STATUS="$_STATUS$_green_dot"
     elif $(echo "$_INDEX" | command grep -q -E '^\?\? '); then
-      _STATUS="$_STATUS$_green_plus"
-    fi
-    if $(echo "$INDEX" | grep '^AM '); then
-      _STATUS="$_STATUS$_orange_plus"
-    elif $(echo "$_INDEX" | command grep -q -E '^\A\M '); then
-      _STATUS="$_STATUS$_orange_plus"
-    fi
-    if $(echo "$INDEX" | grep '^A  '); then
-      _STATUS="$_STATUS$_yellow_plus"
-    elif $(echo "$_INDEX" | command grep -q -E '^\A  '); then
-      _STATUS="$_STATUS$_yellow_plus"
+      _STATUS="$_STATUS$_green_dot"
     fi
 
-    ## MODIFIED FILES ●
-    if $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
+    # ORANGE ●
+    # new files modified
+    if $(echo "$INDEX" | grep '^AM '); then
+      _STATUS="$_STATUS$_orange_dot"
+    elif $(echo "$_INDEX" | command grep -q -E '^\A\M '); then
+      _STATUS="$_STATUS$_orange_dot"
+    ## modified files
+    elif $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
       _STATUS="$_STATUS$_orange_dot"
     elif $(echo "$_INDEX" | command grep -q -E '^\ M '); then
       _STATUS="$_STATUS$_orange_dot"
@@ -129,26 +127,26 @@ my_git_commit_status() {
       _STATUS="$_STATUS$orange_dot"
     elif $(echo "$_INDEX" | command grep -q -E '^\ T '); then
       _STATUS="$_STATUS$_orange_dot"
-    elif $(echo "$_INDEX" | command grep -q '^.\[\M\T\D\] '); then
+    elif $(echo "$_INDEX" | command grep -q '^.\[MTD\] '); then
       _STATUS="$_STATUS$_orange_dot"
     fi
-    if $(echo "$_INDEX" | command grep -q '^\[\A\M\R\D\]\. '); then
+
+    # YELLOW ●
+    ## staged new files
+    if $(echo "$INDEX" | grep '^A  '); then
+      _STATUS="$_STATUS$_yellow_dot"
+    elif $(echo "$_INDEX" | command grep -q -E '^\A  '); then
+      _STATUS="$_STATUS$_yellow_dot"
+    ## staged modified files
+    elif $(echo "$_INDEX" | command grep -q '^\[\AMRD\]\. '); then
       _STATUS="$_STATUS$_yellow_dot"
     fi
 
     ## DELETED FILES ✖
-    if $(echo "$INDEX" | grep '^ D ' &> /dev/null); then
-      _STATUS="$_STATUS$_green_ex"
-    elif $(echo "$_INDEX" | command grep -q -E '^ \D '); then
+    if $(echo "$_INDEX" | command grep -q -E ' D '); then
       _STATUS="$_STATUS$_green_ex"
     fi
-    if $(echo "$INDEX" | grep '^AD ' &> /dev/null); then
-      _STATUS="$_STATUS$_yellow_ex"
-    elif $(echo "$_INDEX" | command grep -q -E '^\AD '); then
-      _STATUS="$_STATUS$_yellow_ex"
-    elif $(echo "$INDEX" | grep '^D  ' &> /dev/null); then
-      _STATUS="$_STATUS$_yellow_ex"
-    elif $(echo "$_INDEX" | command grep -q -E '^\D  '); then
+    if $(echo "$_INDEX" | command grep -q -E '^\D  '); then
       _STATUS="$_STATUS$_yellow_ex"
     fi
 
